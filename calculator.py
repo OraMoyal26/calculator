@@ -1,13 +1,15 @@
-def plus(x,y):
-    return x+y
+import math
 
-def minus(x,y):
-    return x-y
+def plus(args):
+    return sum(args)
 
-def multiply(x,y):
-    return x*y
+def minus(args):
+    return args[0]-args[1]
 
-def divide(x,y):
-    if y==0:
+def multiply(args):
+    return math.prod(args)
+
+def divide(args):
+    if args[1]==0:
         raise ValueError("Division by zero is not allowed")
-    return x/y
+    return args[0]/args[1]
