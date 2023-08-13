@@ -7,5 +7,7 @@ def minus(x,y):
 def multiply(x,y):
     return x*y
 
-def division(x,y):
+def divide(x,y):
+    if y==0:
+        raise ValueError("Division by zero is not allowed")
     return x/y
