@@ -1,4 +1,4 @@
-import numpy
+import numpy as np
 import pandas as pd
 
 def plus(matrix1,matrix2):
