@@ -37,6 +37,6 @@ def divide(matrix1,matrix2):
 
 def matrix_multiply(matrix1,matrix2):
     if matrix1.shape[1] != matrix2.shape[0]:
-        raise ValueError("The dimensions of the matrices are not suitable for matrix multiplication")
+        raise ValueError("The dimensions of the matrices are not match")
     #dataframe to matrix
     return np.dot(matrix1, matrix2)
