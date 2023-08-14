@@ -52,3 +52,29 @@ def test_divide_matrix():
     expected_matrix=np.array([[5,3],[3,2]])
     expected_matrix=expected_matrix.astype(float)
     np.testing.assert_array_equal(divide(matrix1,matrix2),expected_matrix)
+
+
+def test_plus_matrix_unequal_size():
+    matrix1 = np.array([[5,6,1],[7,8,1]])
+    matrix2 = np.array([[1,2],[3,4]])
+    expected_matrix=np.array([[6,8,1],[10,12,1]])
+    np.testing.assert_array_equal(plus(matrix1,matrix2),expected_matrix)
+
+def test_minus_matrix_unequal_size():
+    matrix1 = np.array([[5,6,1],[7,8,1]])
+    matrix2 = np.array([[1,2],[3,4]])
+    expected_matrix=np.array([[4,4,1],[4,4,1]])
+    np.testing.assert_array_equal(minus(matrix1,matrix2),expected_matrix)
+
+def test_multiply_matrix_unequal_size():
+    matrix1 = np.array([[5,6],[7,8]])
+    matrix2 = np.array([[1,2],[3,4],[2,5]])
+    expected_matrix=np.array([[5,12],[21,32],[2,5]])
+    np.testing.assert_array_equal(multiply(matrix1,matrix2),expected_matrix)
+
+def test_divide_matrix_unequal_size():
+    matrix1 = np.array([[5,6,1],[9,8,2],[4,5,3]])
+    matrix2 = np.array([[1,2],[3,4]])
+    expected_matrix=np.array([[5,3,1],[3,2,2],[4,5,3]])
+    expected_matrix=expected_matrix.astype(float)
+    np.testing.assert_array_equal(divide(matrix1,matrix2),expected_matrix)
