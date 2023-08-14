@@ -34,3 +34,9 @@ def divide(matrix1,matrix2):
     if matrix1.shape!=matrix2.shape:
         matrix1,matrix2=resize_matrix(matrix1,matrix2,defult_num=1)
     return matrix1/matrix2
+
+def matrix_multiply(matrix1,matrix2):
+    if matrix1.shape[1] != matrix2.shape[0]:
+        raise ValueError("The dimensions of the matrices are not suitable for matrix multiplication")
+    #dataframe to matrix
+    return np.dot(matrix1, matrix2)

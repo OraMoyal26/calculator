@@ -1,5 +1,6 @@
 from data_calculator import *
 import pandas as pd
+import pytest
 
 
 def test_plus_frame():
@@ -78,3 +79,17 @@ def test_divide_matrix_unequal_size():
     expected_matrix=np.array([[5,3,1],[3,2,2],[4,5,3]])
     expected_matrix=expected_matrix.astype(float)
     np.testing.assert_array_equal(divide(matrix1,matrix2),expected_matrix)
+
+
+def test_matrix_multiply():
+    matrix1 = np.array([[1, 2], [3, 4]])
+    matrix2 = np.array([[5, 6], [7, 8]])
+    expected_matrix=np.array([[19,22],[43,50]])
+    np.testing.assert_array_equal(matrix_multiply(matrix1,matrix2),expected_matrix)
+
+def test_matrix_multiply_dimensions_are_not_match():
+    matrix1 = np.array([[5, 6, 1], [9, 8, 2], [4, 5, 3]])
+    matrix2 = np.array([[1, 2], [3, 4]])
+    with pytest.raises(ValueError, match="The dimensions of the matrices are not match"):
+        matrix_multiply(matrix1,matrix2)
+
